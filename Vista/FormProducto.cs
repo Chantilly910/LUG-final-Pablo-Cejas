@@ -18,13 +18,6 @@ namespace Vista
             CargarDatos();
         }
 
-        private void CargarDatos()
-        {
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = controladora.ListarProductos();
-            dgvProductos.AutoResizeColumns();
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -112,9 +105,36 @@ namespace Vista
             dtpFechaVencimiento.Value = DateTime.Today;
         }
 
+        private void CargarDatos()
+        {
+            var productos = controladora.ListarProductos().ToList();
+
+
+            dgvProductos.DataSource = null;
+            dgvProductos.Columns.Clear();
+            dgvProductos.AutoGenerateColumns = false;
+
+
+            if (productos.Count > 0)
+            {
+                dgvProductos.Columns.Add("Id", "ID");
+                dgvProductos.Columns.Add("Nombre", "Nombre");
+                dgvProductos.Columns.Add("PrecioCompra", "Precio Compra");
+                dgvProductos.Columns.Add("PrecioVenta", "Precio Venta");
+                dgvProductos.Columns.Add("Stock", "Stock");
+                dgvProductos.Columns.Add("FechaVencimiento", "Fecha Vencimiento");
+            }
+
+
+            foreach (var prod in productos)
+            {
+                dgvProductos.Rows.Add(prod.Id, prod.Nombre, prod.PrecioCompra, prod.PrecioVenta, prod.Stock, prod.FechaVencimiento.ToShortDateString());
+            }
+        }
         private void btnListar_Click(object sender, EventArgs e)
         {
             CargarDatos();
         }
+
     }
 }

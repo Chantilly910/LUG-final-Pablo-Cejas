@@ -1,24 +1,41 @@
-// 🔹 Repositorio específico para Producto
-// 🔹 Uso de LINQ para filtrados y búsquedas
-using System;
+using Modelo;
 using System.Collections.Generic;
 using System.Linq;
-using Modelo;
+using Persistencia;
 
 namespace Repos
 {
-    public class RepositorioProducto : RepositorioBase<Producto>
+    public class RepositorioProducto
     {
-        public IEnumerable<Producto> ObtenerProductosProximosAVencer(int dias = 7)
+        public void AltaProducto(Producto producto)
         {
-            DateTime limite = DateTime.Today.AddDays(dias);
-            // 🔹 LINQ + Lambda para filtrar productos próximos a vencer
-            return lista.Where(p => p.Activo && p.FechaVencimiento <= limite);
+            using var db = new ProductosDbContext();
+            db.Productos.Add(producto);
+            db.SaveChanges();
         }
 
-        public IEnumerable<Producto> BuscarPorNombre(string nombre)
+        public void ModificarProducto(Producto producto)
         {
-            return lista.Where(p => p.Activo && p.Nombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) >= 0);
+            using var db = new ProductosDbContext();
+            db.Productos.Update(producto);
+            db.SaveChanges();
+        }
+
+        public void BajaProducto(int id)
+        {
+            using var db = new ProductosDbContext();
+            var prod = db.Productos.Find(id);
+            if (prod != null)
+            {
+                db.Productos.Remove(prod);
+                db.SaveChanges();
+            }
+        }
+
+        public List<Producto> ListarProductos()
+        {
+            using var db = new ProductosDbContext();
+            return db.Productos.ToList();
         }
     }
 }
