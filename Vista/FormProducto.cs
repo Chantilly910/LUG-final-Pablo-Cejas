@@ -44,16 +44,29 @@ namespace Vista
         {
             try
             {
-                if (dgvProductos.CurrentRow == null) return;
+                if (dgvProductos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un producto para modificar.");
+                    return;
+                }
 
-                var producto = dgvProductos.CurrentRow.DataBoundItem as Producto;
-                if (producto == null) return;
+                int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
 
+                // Obtener el producto actual desde la base usando la controladora
+                var producto = controladora.ObtenerProductoPorId(id);
+                if (producto == null)
+                {
+                    MessageBox.Show("No se encontró el producto en la base de datos.");
+                    return;
+                }
+
+                // Actualizar con los valores ingresados en el formulario
                 producto.Nombre = txtNombre.Text;
                 producto.PrecioCompra = decimal.Parse(txtPrecioCompra.Text);
                 producto.Stock = int.Parse(txtStock.Text);
                 producto.FechaVencimiento = dtpFechaVencimiento.Value;
 
+                // Guardar cambios
                 controladora.ModificarProducto(producto);
                 CargarDatos();
                 MessageBox.Show("Producto modificado con éxito.");
@@ -61,29 +74,45 @@ namespace Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error al modificar: {ex.Message}");
             }
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dgvProductos.CurrentRow == null) return;
+                if (dgvProductos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un producto para eliminar.");
+                    return;
+                }
 
-                var producto = dgvProductos.CurrentRow.DataBoundItem as Producto;
-                if (producto == null) return;
+                // Tomar el ID desde la primera celda de la fila seleccionada
+                int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
 
-                controladora.BajaProducto(producto.Id);
-                CargarDatos();
-                MessageBox.Show("Producto eliminado (baja lógica) con éxito.");
-                LimpiarCampos();
+                // Confirmación
+                var confirm = MessageBox.Show("¿Está seguro que desea eliminar este producto?",
+                                              "Confirmar Eliminación",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    controladora.EliminarProducto(id); // Llama a la controladora real
+                    CargarDatos(); // Recargar grilla
+                    MessageBox.Show("Producto eliminado con éxito.");
+                    LimpiarCampos();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error al eliminar: {ex.Message}");
             }
         }
+
+
 
         private void dgvProductos_SelectionChanged(object sender, EventArgs e)
         {
@@ -136,5 +165,9 @@ namespace Vista
             CargarDatos();
         }
 
+        private void FormProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

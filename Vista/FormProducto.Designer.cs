@@ -178,6 +178,7 @@
             Controls.Add(btnEliminar);
             Name = "FormProducto";
             Text = "Productos";
+            Load += FormProducto_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();

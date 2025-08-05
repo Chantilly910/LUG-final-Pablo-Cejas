@@ -33,30 +33,19 @@ namespace Controladora
             _repositorio.Agregar(producto);
         }
 
-        public void ModificarProducto(Producto producto)
-        {
-            if (producto == null)
-                throw new ArgumentNullException(nameof(producto));
-
-            var original = _repositorio.ObtenerPorId(producto.Id);
-            if (original == null)
-                throw new Exception("Producto no encontrado.");
-
-            _repositorio.Modificar(producto);
-        }
-
-        public void BajaProducto(int id)
-        {
-            var producto = _repositorio.ObtenerPorId(id);
-            if (producto == null)
-                throw new Exception("Producto no encontrado.");
-
-            _repositorio.Eliminar(id); // Baja lógica
-        }
-
-        public Producto ObtenerProductoPorId(int id)
+        public Producto? ObtenerProductoPorId(int id)
         {
             return _repositorio.ObtenerPorId(id);
+        }
+
+        public void EliminarProducto(int id)
+        {
+            _repositorio.Eliminar(id);
+        }
+
+        public void ModificarProducto(Producto producto)
+        {
+            _repositorio.Modificar(producto);
         }
 
         public IEnumerable<Producto> ListarProductos()
