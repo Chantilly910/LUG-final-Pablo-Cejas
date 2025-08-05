@@ -111,5 +111,10 @@ namespace Vista
             txtStock.Clear();
             dtpFechaVencimiento.Value = DateTime.Today;
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
     }
 }
