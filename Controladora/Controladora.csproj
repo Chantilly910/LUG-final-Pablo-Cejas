@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Excepciones\Excepciones.csproj" />
     <ProjectReference Include="..\Modelo\Modelo.csproj" />
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj" />
     <ProjectReference Include="..\Repos\Repos.csproj" />
   </ItemGroup>
 

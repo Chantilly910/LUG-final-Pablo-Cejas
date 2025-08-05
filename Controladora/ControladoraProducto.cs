@@ -1,15 +1,15 @@
 // 🔹 Controladora para la entidad Producto
 // 🔹 Encapsulamiento: controla acceso a repositorio y lógica de negocio
 // 🔹 Uso de excepciones para manejo de errores
-// 🔹 Aplicación de principios OOP en métodos (abstractos, virtuales si aplica)
-// 🔹 Uso de LINQ para consultas
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Excepciones;
+using Microsoft.EntityFrameworkCore;
 using Modelo;
 using Repos;
+using Persistencia;
 
 namespace Controladora
 {
@@ -69,10 +69,14 @@ namespace Controladora
             return _repositorio.BuscarPorNombre(nombre);
         }
 
-        public IEnumerable<Producto> ProductosProximosAVencer(int dias = 7)
+        public List<Producto> ObtenerProductosProximosAVencer(int dias = 7)
         {
-            return _repositorio.ObtenerProductosProximosAVencer(dias);
+            var fechaLimite = DateTime.Now.AddDays(dias);
+            return _repositorio.ObtenerProductosProximosAVencer()
+                .Where(p => p.FechaVencimiento <= fechaLimite)
+                .ToList();
         }
+
 
         public void ProcesarMovimientoEntrada(int productoId, int cantidad)
         {

@@ -1,4 +1,5 @@
 using Modelo;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using Persistencia;
@@ -7,35 +8,58 @@ namespace Repos
 {
     public class RepositorioProducto
     {
-        public void AltaProducto(Producto producto)
+        private readonly ProductosDbContext _context;
+
+        public RepositorioProducto()
         {
-            using var db = new ProductosDbContext();
-            db.Productos.Add(producto);
-            db.SaveChanges();
+            _context = new ProductosDbContext();
         }
 
-        public void ModificarProducto(Producto producto)
+        public void Agregar(Producto producto)
         {
-            using var db = new ProductosDbContext();
-            db.Productos.Update(producto);
-            db.SaveChanges();
+            _context.Productos.Add(producto);
+            _context.SaveChanges();
         }
 
-        public void BajaProducto(int id)
+        public void Modificar(Producto producto)
         {
-            using var db = new ProductosDbContext();
-            var prod = db.Productos.Find(id);
+            _context.Productos.Update(producto);
+            _context.SaveChanges();
+        }
+
+        public void Eliminar(int id)
+        {
+            var prod = _context.Productos.Find(id);
             if (prod != null)
             {
-                db.Productos.Remove(prod);
-                db.SaveChanges();
+                _context.Productos.Remove(prod);
+                _context.SaveChanges();
             }
         }
 
-        public List<Producto> ListarProductos()
+        public Producto ObtenerPorId(int id)
         {
-            using var db = new ProductosDbContext();
-            return db.Productos.ToList();
+            return _context.Productos.Find(id);
+        }
+
+        public List<Producto> ListarTodos()
+        {
+            return _context.Productos.ToList();
+        }
+
+        public List<Producto> BuscarPorNombre(string nombre)
+        {
+            return _context.Productos
+                .Where(p => p.Nombre.Contains(nombre))
+                .ToList();
+        }
+
+        public List<Producto> ObtenerProductosProximosAVencer()
+        {
+            var fechaLimite = DateTime.Now.AddDays(7); // próximos 7 días
+            return _context.Productos
+                .Where(p => p.FechaVencimiento <= fechaLimite)
+                .ToList();
         }
     }
 }

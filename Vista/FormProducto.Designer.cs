@@ -28,140 +28,159 @@
 
         private void InitializeComponent()
         {
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.dtpFechaVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblPrecioCompra = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.lblFechaVencimiento = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            this.SuspendLayout();
-
+            dgvProductos = new DataGridView();
+            btnListar = new Button();
+            btnAgregar = new Button();
+            btnModificar = new Button();
+            btnEliminar = new Button();
+            txtNombre = new TextBox();
+            txtPrecioCompra = new TextBox();
+            txtStock = new TextBox();
+            dtpFechaVencimiento = new DateTimePicker();
+            lblNombre = new Label();
+            lblPrecioCompra = new Label();
+            lblStock = new Label();
+            lblFechaVencimiento = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            SuspendLayout();
+            // 
             // dgvProductos
-            this.dgvProductos.AllowUserToAddRows = false;
-            this.dgvProductos.AllowUserToDeleteRows = false;
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 12);
-            this.dgvProductos.MultiSelect = false;
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(460, 200);
-            this.dgvProductos.TabIndex = 0;
-            this.dgvProductos.SelectionChanged += new System.EventHandler(this.dgvProductos_SelectionChanged);
-
-            // lblNombre
-            this.lblNombre.Location = new System.Drawing.Point(12, 220);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(120, 23);
-            this.lblNombre.Text = "Nombre:";
-
-            // txtNombre
-            this.txtNombre.Location = new System.Drawing.Point(140, 220);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 23);
-            this.txtNombre.TabIndex = 1;
-
-            // lblPrecioCompra
-            this.lblPrecioCompra.Location = new System.Drawing.Point(12, 250);
-            this.lblPrecioCompra.Name = "lblPrecioCompra";
-            this.lblPrecioCompra.Size = new System.Drawing.Size(120, 23);
-            this.lblPrecioCompra.Text = "Precio Compra:";
-
-            // txtPrecioCompra
-            this.txtPrecioCompra.Location = new System.Drawing.Point(140, 250);
-            this.txtPrecioCompra.Name = "txtPrecioCompra";
-            this.txtPrecioCompra.Size = new System.Drawing.Size(200, 23);
-            this.txtPrecioCompra.TabIndex = 2;
-
-            // lblStock
-            this.lblStock.Location = new System.Drawing.Point(12, 280);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(120, 23);
-            this.lblStock.Text = "Stock:";
-
-            // txtStock
-            this.txtStock.Location = new System.Drawing.Point(140, 280);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(200, 23);
-            this.txtStock.TabIndex = 3;
-
-            // lblFechaVencimiento
-            this.lblFechaVencimiento.Location = new System.Drawing.Point(12, 310);
-            this.lblFechaVencimiento.Name = "lblFechaVencimiento";
-            this.lblFechaVencimiento.Size = new System.Drawing.Size(120, 23);
-            this.lblFechaVencimiento.Text = "Fecha Vencimiento:";
-
-            // dtpFechaVencimiento
-            this.dtpFechaVencimiento.Location = new System.Drawing.Point(140, 310);
-            this.dtpFechaVencimiento.Name = "dtpFechaVencimiento";
-            this.dtpFechaVencimiento.Size = new System.Drawing.Size(200, 23);
-            this.dtpFechaVencimiento.TabIndex = 4;
-
+            // 
+            dgvProductos.AllowUserToAddRows = false;
+            dgvProductos.AllowUserToDeleteRows = false;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(12, 12);
+            dgvProductos.MultiSelect = false;
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.ReadOnly = true;
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.Size = new Size(671, 200);
+            dgvProductos.TabIndex = 0;
+            dgvProductos.SelectionChanged += dgvProductos_SelectionChanged;
+            // 
             // btnListar
-            this.btnListar.Location = new System.Drawing.Point(370, 220);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(100, 30);
-            this.btnListar.TabIndex = 5;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-
+            // 
+            btnListar.Location = new Point(583, 218);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(100, 30);
+            btnListar.TabIndex = 5;
+            btnListar.Text = "Listar";
+            btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
+            // 
             // btnAgregar
-            this.btnAgregar.Location = new System.Drawing.Point(370, 260);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 30);
-            this.btnAgregar.TabIndex = 6;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-
+            // 
+            btnAgregar.Location = new Point(583, 258);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(100, 30);
+            btnAgregar.TabIndex = 6;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
             // btnModificar
-            this.btnModificar.Location = new System.Drawing.Point(370, 300);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 30);
-            this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-
+            // 
+            btnModificar.Location = new Point(583, 298);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(100, 30);
+            btnModificar.TabIndex = 7;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // btnEliminar
-            this.btnEliminar.Location = new System.Drawing.Point(370, 340);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 30);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-
+            // 
+            btnEliminar.Location = new Point(583, 338);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(100, 30);
+            btnEliminar.TabIndex = 8;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(140, 220);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(378, 27);
+            txtNombre.TabIndex = 1;
+            // 
+            // txtPrecioCompra
+            // 
+            txtPrecioCompra.Location = new Point(140, 250);
+            txtPrecioCompra.Name = "txtPrecioCompra";
+            txtPrecioCompra.Size = new Size(378, 27);
+            txtPrecioCompra.TabIndex = 2;
+            // 
+            // txtStock
+            // 
+            txtStock.Location = new Point(140, 280);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(378, 27);
+            txtStock.TabIndex = 3;
+            // 
+            // dtpFechaVencimiento
+            // 
+            dtpFechaVencimiento.Location = new Point(140, 310);
+            dtpFechaVencimiento.Name = "dtpFechaVencimiento";
+            dtpFechaVencimiento.Size = new Size(378, 27);
+            dtpFechaVencimiento.TabIndex = 4;
+            // 
+            // lblNombre
+            // 
+            lblNombre.Location = new Point(12, 220);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(120, 23);
+            lblNombre.TabIndex = 5;
+            lblNombre.Text = "Nombre:";
+            // 
+            // lblPrecioCompra
+            // 
+            lblPrecioCompra.Location = new Point(12, 250);
+            lblPrecioCompra.Name = "lblPrecioCompra";
+            lblPrecioCompra.Size = new Size(120, 23);
+            lblPrecioCompra.TabIndex = 6;
+            lblPrecioCompra.Text = "Precio Compra:";
+            // 
+            // lblStock
+            // 
+            lblStock.Location = new Point(12, 280);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(120, 23);
+            lblStock.TabIndex = 7;
+            lblStock.Text = "Stock:";
+            // 
+            // lblFechaVencimiento
+            // 
+            lblFechaVencimiento.Location = new Point(12, 310);
+            lblFechaVencimiento.Name = "lblFechaVencimiento";
+            lblFechaVencimiento.Size = new Size(120, 23);
+            lblFechaVencimiento.TabIndex = 8;
+            lblFechaVencimiento.Text = "Fecha Vencimiento:";
+            // 
             // FormProducto
-            this.ClientSize = new System.Drawing.Size(484, 390);
-            this.Controls.Add(this.dgvProductos);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtPrecioCompra);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.dtpFechaVencimiento);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblPrecioCompra);
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.lblFechaVencimiento);
-            this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnEliminar);
-            this.Name = "FormProducto";
-            this.Text = "Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            ClientSize = new Size(770, 450);
+            Controls.Add(dgvProductos);
+            Controls.Add(txtNombre);
+            Controls.Add(txtPrecioCompra);
+            Controls.Add(txtStock);
+            Controls.Add(dtpFechaVencimiento);
+            Controls.Add(lblNombre);
+            Controls.Add(lblPrecioCompra);
+            Controls.Add(lblStock);
+            Controls.Add(lblFechaVencimiento);
+            Controls.Add(btnListar);
+            Controls.Add(btnAgregar);
+            Controls.Add(btnModificar);
+            Controls.Add(btnEliminar);
+            Name = "FormProducto";
+            Text = "Productos";
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
