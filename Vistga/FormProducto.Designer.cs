@@ -1,4 +1,4 @@
-﻿namespace LUG_final_Pablo_Cejas
+﻿namespace Vista
 {
     partial class FormProducto
     {
@@ -60,21 +60,21 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(199, 233);
+            txtNombre.Location = new Point(186, 233);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(200, 27);
             txtNombre.TabIndex = 1;
             // 
             // txtPrecioCompra
             // 
-            txtPrecioCompra.Location = new Point(199, 263);
+            txtPrecioCompra.Location = new Point(186, 263);
             txtPrecioCompra.Name = "txtPrecioCompra";
             txtPrecioCompra.Size = new Size(200, 27);
             txtPrecioCompra.TabIndex = 2;
             // 
             // txtStock
             // 
-            txtStock.Location = new Point(199, 293);
+            txtStock.Location = new Point(186, 293);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(200, 27);
             txtStock.TabIndex = 3;
@@ -82,14 +82,14 @@
             // dtpFechaVencimiento
             // 
             dtpFechaVencimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaVencimiento.Location = new Point(199, 325);
+            dtpFechaVencimiento.Location = new Point(186, 323);
             dtpFechaVencimiento.Name = "dtpFechaVencimiento";
             dtpFechaVencimiento.Size = new Size(200, 27);
             dtpFechaVencimiento.TabIndex = 4;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(472, 230);
+            btnAgregar.Location = new Point(472, 240);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 30);
             btnAgregar.TabIndex = 5;
@@ -99,7 +99,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(472, 266);
+            btnModificar.Location = new Point(472, 280);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(100, 30);
             btnModificar.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(472, 299);
+            btnEliminar.Location = new Point(472, 320);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 7;
@@ -155,7 +155,7 @@
             // 
             // FormProducto
             // 
-            ClientSize = new Size(785, 472);
+            ClientSize = new Size(701, 446);
             Controls.Add(lblFechaVencimiento);
             Controls.Add(lblStock);
             Controls.Add(lblPrecioCompra);

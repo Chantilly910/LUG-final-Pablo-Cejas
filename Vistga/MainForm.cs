@@ -1,9 +1,7 @@
 using System;
 using System.Windows.Forms;
-using Controladora;
-using Modelo;
 
-namespace LUG_final_Pablo_Cejas
+namespace Vista
 {
     public partial class MainForm : Form
     {
@@ -14,14 +12,17 @@ namespace LUG_final_Pablo_Cejas
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formProductos = new FormProducto();
-            formProductos.ShowDialog();
+            var formProducto = new FormProducto();
+            formProducto.ShowDialog();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formProveedores = new FormProveedor();
-            formProveedores.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

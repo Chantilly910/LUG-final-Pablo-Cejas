@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LUG_final_Pablo_Cejas
+namespace Vista
 {
     public partial class FormProducto : Form
     {

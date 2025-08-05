@@ -3,17 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "LUG final Pablo Cejas\Vista.csproj", "{81DCB18A-8B7A-4516-B94F-2FCC74C849C2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controladora", "Controladora\Controladora.csproj", "{D2AA723E-4DEB-4198-94B8-4300B574CC70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB} = {02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}
+		{580E2AC9-54AB-499C-B77C-8CF4A9578E86} = {580E2AC9-54AB-499C-B77C-8CF4A9578E86}
+		{D3D91B3F-A95F-49BE-AA2D-025EFD45E1AF} = {D3D91B3F-A95F-49BE-AA2D-025EFD45E1AF}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{580E2AC9-54AB-499C-B77C-8CF4A9578E86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excepciones", "Excepciones\Excepciones.csproj", "{0E90C8D3-C43B-4943-9A3B-C4520E2BB3D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{D3D91B3F-A95F-49BE-AA2D-025EFD45E1AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{580E2AC9-54AB-499C-B77C-8CF4A9578E86} = {580E2AC9-54AB-499C-B77C-8CF4A9578E86}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repos", "Repos\Repos.csproj", "{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{580E2AC9-54AB-499C-B77C-8CF4A9578E86} = {580E2AC9-54AB-499C-B77C-8CF4A9578E86}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Vistga\Vista.csproj", "{2E32B366-C577-4E49-87BC-5A94B43B5887}"
+	ProjectSection(ProjectDependencies) = postProject
+		{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB} = {02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}
+		{D2AA723E-4DEB-4198-94B8-4300B574CC70} = {D2AA723E-4DEB-4198-94B8-4300B574CC70}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +36,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81DCB18A-8B7A-4516-B94F-2FCC74C849C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81DCB18A-8B7A-4516-B94F-2FCC74C849C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81DCB18A-8B7A-4516-B94F-2FCC74C849C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81DCB18A-8B7A-4516-B94F-2FCC74C849C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D2AA723E-4DEB-4198-94B8-4300B574CC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D2AA723E-4DEB-4198-94B8-4300B574CC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2AA723E-4DEB-4198-94B8-4300B574CC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +56,10 @@ Global
 		{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02FEA53E-F15B-4A30-8DE5-1133EFC4A5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E32B366-C577-4E49-87BC-5A94B43B5887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E32B366-C577-4E49-87BC-5A94B43B5887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E32B366-C577-4E49-87BC-5A94B43B5887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E32B366-C577-4E49-87BC-5A94B43B5887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
